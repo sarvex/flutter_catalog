@@ -37,8 +37,7 @@ class _MyDemoApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: <Widget>[
-        Text(
-            "ScopedModel allows efficient sharing/updating of app's state from "
+        Text("ScopedModel allows efficient sharing/updating of app's state from "
             "children widgets down the widgets tree.\n\n"
             "In this example, the app's root widget is a ScopedModel, "
             "so it's state is shared to the two 'CounterAndButtons' children"

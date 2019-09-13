@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:transparent_image/transparent_image.dart'
-    show kTransparentImage;
+import 'package:transparent_image/transparent_image.dart' show kTransparentImage;
 
 class ImageExample extends StatelessWidget {
   const ImageExample({Key key}) : super(key: key);
@@ -25,8 +24,7 @@ class ImageExample extends StatelessWidget {
           // https://flutter.io/docs/cookbook/images/fading-in-images
           child: FadeInImage.memoryNetwork(
             placeholder: kTransparentImage,
-            image:
-                'https://images.freeimages.com/images/large-previews/4ad/coloured-pencils-1427682.jpg',
+            image: 'https://images.freeimages.com/images/large-previews/4ad/coloured-pencils-1427682.jpg',
           ),
         ),
         Divider(),

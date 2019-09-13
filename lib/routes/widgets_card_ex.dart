@@ -84,10 +84,7 @@ class CardExample extends StatelessWidget {
                         alignment: Alignment.centerLeft,
                         child: Text(
                           'Card 4 (complex example)',
-                          style: Theme.of(context)
-                              .textTheme
-                              .headline
-                              .copyWith(color: Colors.white),
+                          style: Theme.of(context).textTheme.headline.copyWith(color: Colors.white),
                         ),
                       ),
                     )

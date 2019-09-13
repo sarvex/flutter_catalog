@@ -7,8 +7,7 @@ class BottomNavigationBarExample extends StatefulWidget {
   State<StatefulWidget> createState() => _BottomNavigationBarExampleState();
 }
 
-class _BottomNavigationBarExampleState
-    extends State<BottomNavigationBarExample> {
+class _BottomNavigationBarExampleState extends State<BottomNavigationBarExample> {
   int _currentTabIndex = 0;
 
   @override

@@ -43,9 +43,7 @@ class _FirebaseVoteExampleState extends State<FirebaseVoteExample> {
                 .toList()
                   ..sort((record1, record2) => record2.votes - record1.votes);
             return ListView(
-              children: records
-                  .map((record) => _buildListItem(context, record))
-                  .toList(),
+              children: records.map((record) => _buildListItem(context, record)).toList(),
             );
           }
         },
@@ -80,9 +78,7 @@ class _FirebaseVoteExampleState extends State<FirebaseVoteExample> {
               IconButton(
                 icon: Icon(
                   Icons.thumb_up,
-                  color: this._isVoted(record.language)
-                      ? Colors.blue
-                      : Colors.grey,
+                  color: this._isVoted(record.language) ? Colors.blue : Colors.grey,
                 ),
                 onPressed: () => this._toggleVoted(record),
               ),
@@ -102,12 +98,10 @@ class _FirebaseVoteExampleState extends State<FirebaseVoteExample> {
       // Update votes via transactions are atomic: no race condition.
       await Firestore.instance.runTransaction(
         (transaction) async {
-          final freshSnapshot =
-              await transaction.get(record.firestoreDocReference);
+          final freshSnapshot = await transaction.get(record.firestoreDocReference);
           // Get the most fresh record.
           final freshRecord = _LangaugeVotingRecord.fromSnapshot(freshSnapshot);
-          await transaction.update(record.firestoreDocReference,
-              {'votes': freshRecord.votes + deltaVotes});
+          await transaction.update(record.firestoreDocReference, {'votes': freshRecord.votes + deltaVotes});
         },
         timeout: Duration(seconds: 3),
       );
@@ -130,8 +124,7 @@ class _LangaugeVotingRecord {
   // Reference to this record as a firestore document.
   final DocumentReference firestoreDocReference;
 
-  _LangaugeVotingRecord.fromMap(Map<String, dynamic> map,
-      {@required this.firestoreDocReference})
+  _LangaugeVotingRecord.fromMap(Map<String, dynamic> map, {@required this.firestoreDocReference})
       : assert(map['language'] != null),
         assert(map['votes'] != null),
         language = map['language'],

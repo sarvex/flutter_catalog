@@ -31,9 +31,7 @@ class _FirebaseLoginExampleState extends State<FirebaseLoginExample> {
   Widget build(BuildContext context) {
     final statusText = Padding(
       padding: EdgeInsets.symmetric(vertical: 10.0),
-      child: Text(_user == null
-          ? 'You are not logged in.'
-          : 'You are logged in as "${_user.displayName}".'),
+      child: Text(_user == null ? 'You are not logged in.' : 'You are logged in as "${_user.displayName}".'),
     );
     final googleLoginBtn = MaterialButton(
       color: Colors.blueAccent,
@@ -125,9 +123,7 @@ class _FirebaseLoginExampleState extends State<FirebaseLoginExample> {
     final user = await kFirebaseAuth.currentUser();
     Scaffold.of(context).showSnackBar(
       SnackBar(
-        content: Text(user == null
-            ? 'No user logged in.'
-            : '"${user.displayName}" logged out.'),
+        content: Text(user == null ? 'No user logged in.' : '"${user.displayName}" logged out.'),
       ),
     );
     kFirebaseAuth.signOut();
@@ -160,12 +156,10 @@ class _FirebaseLoginExampleState extends State<FirebaseLoginExample> {
                       ),
               ),
               ListTile(
-                title: Text(
-                    'Last sign in: ${DateTime.fromMillisecondsSinceEpoch(user.metadata.lastSignInTimestamp)}'),
+                title: Text('Last sign in: ${DateTime.fromMillisecondsSinceEpoch(user.metadata.lastSignInTimestamp)}'),
               ),
               ListTile(
-                title: Text(
-                    'Creation time: ${DateTime.fromMillisecondsSinceEpoch(user.metadata.creationTimestamp)}'),
+                title: Text('Creation time: ${DateTime.fromMillisecondsSinceEpoch(user.metadata.creationTimestamp)}'),
               ),
               ListTile(title: Text('ProviderData: ${user.providerData}')),
             ],

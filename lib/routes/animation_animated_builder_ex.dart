@@ -8,15 +8,13 @@ class AnimatedBuilderExample extends StatefulWidget {
   _AnimatedBuilderExampleState createState() => _AnimatedBuilderExampleState();
 }
 
-class _AnimatedBuilderExampleState extends State<AnimatedBuilderExample>
-    with SingleTickerProviderStateMixin {
+class _AnimatedBuilderExampleState extends State<AnimatedBuilderExample> with SingleTickerProviderStateMixin {
   AnimationController _controller;
 
   @override
   void initState() {
     super.initState();
-    this._controller =
-        AnimationController(duration: Duration(seconds: 1), vsync: this);
+    this._controller = AnimationController(duration: Duration(seconds: 1), vsync: this);
   }
 
   @override
@@ -27,8 +25,7 @@ class _AnimatedBuilderExampleState extends State<AnimatedBuilderExample>
 
   @override
   Widget build(BuildContext context) {
-    final rotateAnimation =
-        Tween<double>(begin: 0, end: pi).animate(this._controller);
+    final rotateAnimation = Tween<double>(begin: 0, end: pi).animate(this._controller);
     return Column(
       children: <Widget>[
         AnimatedBuilder(

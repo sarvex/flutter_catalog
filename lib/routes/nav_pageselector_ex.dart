@@ -36,8 +36,7 @@ class PageSelectorExample extends StatelessWidget {
               RaisedButton(
                 child: Text('SKIP'),
                 onPressed: () {
-                  final TabController controller =
-                      DefaultTabController.of(context);
+                  final TabController controller = DefaultTabController.of(context);
                   if (!controller.indexIsChanging) {
                     controller.animateTo(kIcons.length - 1);
                   }

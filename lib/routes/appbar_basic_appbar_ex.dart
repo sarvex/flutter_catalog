@@ -22,10 +22,7 @@ class BasicAppbarExample extends StatelessWidget {
           ),
           PopupMenuButton(
             itemBuilder: (BuildContext context) {
-              return [
-                PopupMenuItem(child: Text('Boat')),
-                PopupMenuItem(child: Text('Train'))
-              ];
+              return [PopupMenuItem(child: Text('Boat')), PopupMenuItem(child: Text('Train'))];
             },
           )
         ],

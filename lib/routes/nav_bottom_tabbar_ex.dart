@@ -7,8 +7,7 @@ class BottomTabbarExample extends StatefulWidget {
   State<StatefulWidget> createState() => _BottomTabbarExampleState();
 }
 
-class _BottomTabbarExampleState extends State<BottomTabbarExample>
-    with SingleTickerProviderStateMixin {
+class _BottomTabbarExampleState extends State<BottomTabbarExample> with SingleTickerProviderStateMixin {
   TabController _tabController;
 
   static const _kTabPages = <Widget>[

@@ -12,8 +12,7 @@ class FirebaseChatroomExample extends StatefulWidget {
   const FirebaseChatroomExample({Key key}) : super(key: key);
 
   @override
-  _FirebaseChatroomExampleState createState() =>
-      _FirebaseChatroomExampleState();
+  _FirebaseChatroomExampleState createState() => _FirebaseChatroomExampleState();
 }
 
 class _FirebaseChatroomExampleState extends State<FirebaseChatroomExample> {
@@ -27,8 +26,7 @@ class _FirebaseChatroomExampleState extends State<FirebaseChatroomExample> {
   void initState() {
     super.initState();
     final now = DateTime.now().toUtc();
-    this._firebaseMsgDbRef =
-        kFirebaseDbRef.child('messages/${now.year}/${now.month}/${now.day}');
+    this._firebaseMsgDbRef = kFirebaseDbRef.child('messages/${now.year}/${now.month}/${now.day}');
     kFirebaseAuth.currentUser().then(
           (user) => setState(() {
             this._user = user;
@@ -48,18 +46,12 @@ class _FirebaseChatroomExampleState extends State<FirebaseChatroomExample> {
         ),
         title: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
-          child: Text(_user == null
-              ? 'Chatting'
-              : 'Chatting as "${_user.displayName}"'),
+          child: Text(_user == null ? 'Chatting' : 'Chatting as "${_user.displayName}"'),
         ),
       ),
       body: Center(
         child: Column(
-          children: <Widget>[
-            _buildMessagesList(),
-            Divider(height: 2.0),
-            _buildComposeMsgRow()
-          ],
+          children: <Widget>[_buildMessagesList(), Divider(height: 2.0), _buildComposeMsgRow()],
         ),
       ),
     );
@@ -94,8 +86,7 @@ class _FirebaseChatroomExampleState extends State<FirebaseChatroomExample> {
           sort: (a, b) => b.key.compareTo(a.key),
           padding: EdgeInsets.all(8.0),
           reverse: true,
-          itemBuilder: (BuildContext ctx, DataSnapshot snapshot,
-                  Animation<double> animation, int idx) =>
+          itemBuilder: (BuildContext ctx, DataSnapshot snapshot, Animation<double> animation, int idx) =>
               _messageFromSnapshot(snapshot, animation),
         ),
       ),
@@ -103,8 +94,7 @@ class _FirebaseChatroomExampleState extends State<FirebaseChatroomExample> {
   }
 
   // Returns the UI of one message from a data snapshot.
-  Widget _messageFromSnapshot(
-      DataSnapshot snapshot, Animation<double> animation) {
+  Widget _messageFromSnapshot(DataSnapshot snapshot, Animation<double> animation) {
     final String senderName = snapshot.value['senderName'] ?? '?? <unknown>';
     final String msgText = snapshot.value['text'] ?? '??';
     final sentTime = snapshot.value['timestamp'] ?? '<unknown timestamp>';
@@ -167,16 +157,13 @@ class _FirebaseChatroomExampleState extends State<FirebaseChatroomExample> {
               maxLength: 200,
               decoration: InputDecoration.collapsed(hintText: "Send a message"),
               controller: _textController,
-              onChanged: (String text) =>
-                  setState(() => _isComposing = text.length > 0),
+              onChanged: (String text) => setState(() => _isComposing = text.length > 0),
               onSubmitted: _onTextMsgSubmitted,
             ),
           ),
           IconButton(
             icon: Icon(Icons.send),
-            onPressed: _isComposing
-                ? () => _onTextMsgSubmitted(_textController.text)
-                : null,
+            onPressed: _isComposing ? () => _onTextMsgSubmitted(_textController.text) : null,
           ),
         ],
       ),

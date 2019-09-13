@@ -21,8 +21,7 @@ class _MyEvent {
   final bool isIncrement;
   final DateTime timestamp;
 
-  _MyEvent({@required this.isIncrement, DateTime timestamp})
-      : this.timestamp = timestamp ?? DateTime.now();
+  _MyEvent({@required this.isIncrement, DateTime timestamp}) : this.timestamp = timestamp ?? DateTime.now();
 }
 
 // ###2. Define a State class that represents our app's state. MyBloc's output

@@ -19,8 +19,7 @@ class _FileReadWriteExampleState extends State<FileReadWriteExample> {
   void initState() {
     super.initState();
     this._loadTextFromLocalFile();
-    this._getLocalFile()
-      ..then((file) => setState(() => this._localFilePath = file.path));
+    this._getLocalFile()..then((file) => setState(() => this._localFilePath = file.path));
   }
 
   @override
@@ -63,8 +62,7 @@ class _FileReadWriteExampleState extends State<FileReadWriteExample> {
         Text(this._localFilePath, style: Theme.of(context).textTheme.caption),
         Divider(height: 20.0),
         Text('Local file content:'),
-        Text(this._localFileContent,
-            style: Theme.of(context).textTheme.caption),
+        Text(this._localFileContent, style: Theme.of(context).textTheme.caption),
       ],
     );
   }

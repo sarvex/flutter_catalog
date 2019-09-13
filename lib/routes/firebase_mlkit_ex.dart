@@ -2,8 +2,7 @@ import 'dart:io';
 
 import 'package:firebase_ml_vision/firebase_ml_vision.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:transparent_image/transparent_image.dart'
-    show kTransparentImage;
+import 'package:transparent_image/transparent_image.dart' show kTransparentImage;
 import 'package:flutter/material.dart';
 
 // NOTE: to add firebase support, first go to firebase console, generate the
@@ -33,8 +32,7 @@ class _FirebaseMLKitExampleState extends State<FirebaseMLKitExample> {
             leading: Icon(Icons.camera_alt),
             title: Text('Take picture'),
             onTap: () async {
-              final File imageFile =
-                  await ImagePicker.pickImage(source: ImageSource.camera);
+              final File imageFile = await ImagePicker.pickImage(source: ImageSource.camera);
               Navigator.pop(ctx, imageFile);
             },
           ),
@@ -43,8 +41,7 @@ class _FirebaseMLKitExampleState extends State<FirebaseMLKitExample> {
             title: Text('Pick from gallery'),
             onTap: () async {
               try {
-                final File imageFile =
-                    await ImagePicker.pickImage(source: ImageSource.gallery);
+                final File imageFile = await ImagePicker.pickImage(source: ImageSource.gallery);
                 Navigator.pop(ctx, imageFile);
               } catch (e) {
                 print(e);
@@ -72,18 +69,15 @@ class _FirebaseMLKitExampleState extends State<FirebaseMLKitExample> {
       return;
     }
     String result = '';
-    final FirebaseVisionImage visionImage =
-        FirebaseVisionImage.fromFile(this._imageFile);
+    final FirebaseVisionImage visionImage = FirebaseVisionImage.fromFile(this._imageFile);
     final ImageLabeler labelDetector = FirebaseVision.instance.imageLabeler();
-    final List<ImageLabel> labels =
-        await labelDetector.processImage(visionImage);
+    final List<ImageLabel> labels = await labelDetector.processImage(visionImage);
     result += 'Detected ${labels.length} labels.\n';
     for (ImageLabel label in labels) {
       final String text = label.text;
       final String entityId = label.entityId;
       final double confidence = label.confidence;
-      result +=
-          '\n#Label: $text($entityId), confidence=${confidence.toStringAsFixed(3)}';
+      result += '\n#Label: $text($entityId), confidence=${confidence.toStringAsFixed(3)}';
     }
     if (result.length > 0) {
       setState(() => this._mlResult = result);
@@ -96,12 +90,9 @@ class _FirebaseMLKitExampleState extends State<FirebaseMLKitExample> {
       return;
     }
     String result = '';
-    final FirebaseVisionImage visionImage =
-        FirebaseVisionImage.fromFile(this._imageFile);
-    final TextRecognizer textRecognizer =
-        FirebaseVision.instance.textRecognizer();
-    final VisionText visionText =
-        await textRecognizer.processImage(visionImage);
+    final FirebaseVisionImage visionImage = FirebaseVisionImage.fromFile(this._imageFile);
+    final TextRecognizer textRecognizer = FirebaseVision.instance.textRecognizer();
+    final VisionText visionText = await textRecognizer.processImage(visionImage);
     final String text = visionText.text;
     result += 'Detected ${visionText.blocks.length} text blocks.\n';
     for (TextBlock block in visionText.blocks) {
@@ -131,13 +122,10 @@ class _FirebaseMLKitExampleState extends State<FirebaseMLKitExample> {
       return;
     }
     String result = '';
-    final FirebaseVisionImage visionImage =
-        FirebaseVisionImage.fromFile(this._imageFile);
-    final BarcodeDetector barcodeDetector =
-        FirebaseVision.instance.barcodeDetector();
+    final FirebaseVisionImage visionImage = FirebaseVisionImage.fromFile(this._imageFile);
+    final BarcodeDetector barcodeDetector = FirebaseVision.instance.barcodeDetector();
 
-    final List<Barcode> barcodes =
-        await barcodeDetector.detectInImage(visionImage);
+    final List<Barcode> barcodes = await barcodeDetector.detectInImage(visionImage);
     result += 'Detected ${barcodes.length} barcodes.\n';
     for (Barcode barcode in barcodes) {
       final Rect boundingBox = barcode.boundingBox;
@@ -176,15 +164,13 @@ class _FirebaseMLKitExampleState extends State<FirebaseMLKitExample> {
       return;
     }
     String result = '';
-    final FirebaseVisionImage visionImage =
-        FirebaseVisionImage.fromFile(this._imageFile);
+    final FirebaseVisionImage visionImage = FirebaseVisionImage.fromFile(this._imageFile);
     final options = FaceDetectorOptions(
       enableLandmarks: true,
       enableClassification: true,
       enableTracking: true,
     );
-    final FaceDetector faceDetector =
-        FirebaseVision.instance.faceDetector(options);
+    final FaceDetector faceDetector = FirebaseVision.instance.faceDetector(options);
     final List<Face> faces = await faceDetector.processImage(visionImage);
     result += 'Detected ${faces.length} faces.\n';
     for (Face face in faces) {

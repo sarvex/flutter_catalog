@@ -59,7 +59,7 @@ class _SqliteExampleState extends State<SqliteExample> {
       onCreate: (Database db, int version) async {
         await db.execute('''
         CREATE TABLE $kDbTableName(
-          id INTEGER PRIMARY KEY, 
+          id INTEGER PRIMARY KEY,
           isDone BIT NOT NULL,
           content TEXT,
           createdAt INT)
@@ -87,7 +87,7 @@ class _SqliteExampleState extends State<SqliteExample> {
           VALUES
             (
               "${todo.content}",
-              ${todo.isDone ? 1 : 0}, 
+              ${todo.isDone ? 1 : 0},
               ${todo.createdAt.millisecondsSinceEpoch}
             )''');
         print('Inserted todo item with id=$id.');
@@ -160,8 +160,7 @@ class _SqliteExampleState extends State<SqliteExample> {
         subtitle: Text('id=${todo.id}\ncreated at ${todo.createdAt}'),
         isThreeLine: true,
         leading: IconButton(
-          icon: Icon(
-              todo.isDone ? Icons.check_box : Icons.check_box_outline_blank),
+          icon: Icon(todo.isDone ? Icons.check_box : Icons.check_box_outline_blank),
           onPressed: () async {
             await _toggleTodoItem(todo);
             _updateUI();

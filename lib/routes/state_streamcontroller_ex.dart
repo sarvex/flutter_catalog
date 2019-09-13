@@ -6,8 +6,7 @@ class StreamControllerExample extends StatefulWidget {
   const StreamControllerExample({Key key}) : super(key: key);
 
   @override
-  _StreamControllerExampleState createState() =>
-      _StreamControllerExampleState();
+  _StreamControllerExampleState createState() => _StreamControllerExampleState();
 }
 
 // The data class in our demo stream, contains just a message string and a

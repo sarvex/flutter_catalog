@@ -52,9 +52,7 @@ class _ReorderableListExampleState extends State<ReorderableListExample> {
   void _onSort() {
     setState(() {
       _reverseSort = !_reverseSort;
-      _items.sort((_ListItem a, _ListItem b) => _reverseSort
-          ? b.value.compareTo(a.value)
-          : a.value.compareTo(b.value));
+      _items.sort((_ListItem a, _ListItem b) => _reverseSort ? b.value.compareTo(a.value) : a.value.compareTo(b.value));
     });
   }
 

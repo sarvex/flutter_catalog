@@ -7,9 +7,7 @@ import './my_app_routes.dart' show kAllRoutes;
 class MyAppSettings extends ChangeNotifier {
   static const _kBookmarkedRoutesPreferenceKey = 'BOOKMARKED_ROUTES';
   static const _kDarkModePreferenceKey = 'DARK_MODE';
-  static final _kRoutenameToRouteMap = {
-    for (MyRoute route in kAllRoutes) route.routeName: route
-  };
+  static final _kRoutenameToRouteMap = {for (MyRoute route in kAllRoutes) route.routeName: route};
 
   final SharedPreferences _pref;
 
@@ -22,13 +20,11 @@ class MyAppSettings extends ChangeNotifier {
     notifyListeners();
   }
 
-  List<String> get starredRoutenames =>
-      _pref?.getStringList(_kBookmarkedRoutesPreferenceKey) ?? [];
+  List<String> get starredRoutenames => _pref?.getStringList(_kBookmarkedRoutesPreferenceKey) ?? [];
 
   List<MyRoute> get starredRoutes => [
         for (String routename in this.starredRoutenames)
-          if (_kRoutenameToRouteMap[routename] != null)
-            _kRoutenameToRouteMap[routename]
+          if (_kRoutenameToRouteMap[routename] != null) _kRoutenameToRouteMap[routename]
       ];
 
   // Returns a widget showing the star status of one demo route.
@@ -43,8 +39,7 @@ class MyAppSettings extends ChangeNotifier {
     );
   }
 
-  bool isStarred(String routeName) =>
-      starredRoutenames.contains(routeName) ?? false;
+  bool isStarred(String routeName) => starredRoutenames.contains(routeName) ?? false;
 
   void toggleStarred(String routeName) {
     final staredRoutes = this.starredRoutenames;

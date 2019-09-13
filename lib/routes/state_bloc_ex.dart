@@ -19,8 +19,7 @@ class _MyEvent {
   final bool isIncrement;
   final DateTime timestamp;
 
-  _MyEvent({@required this.isIncrement, DateTime timestamp})
-      : this.timestamp = timestamp ?? DateTime.now();
+  _MyEvent({@required this.isIncrement, DateTime timestamp}) : this.timestamp = timestamp ?? DateTime.now();
 }
 
 // ###2. Define a State class that represents our app's state. MyBloc's output
@@ -72,12 +71,10 @@ class MyBlocProvider extends InheritedWidget {
   final MyBloc bloc;
   final Widget child;
 
-  MyBlocProvider({Key key, @required this.bloc, this.child})
-      : super(key: key, child: child);
+  MyBlocProvider({Key key, @required this.bloc, this.child}) : super(key: key, child: child);
 
   static MyBlocProvider of(BuildContext context) {
-    return (context.inheritFromWidgetOfExactType(MyBlocProvider)
-        as MyBlocProvider);
+    return (context.inheritFromWidgetOfExactType(MyBlocProvider) as MyBlocProvider);
   }
 
   @override
@@ -98,8 +95,7 @@ class _MyDemoAppState extends State<_MyDemoApp> {
   Widget build(BuildContext context) {
     return ListView(
       children: <Widget>[
-        Text(
-            "BLoC pattern is a combination of StreamBuilder and InheritedWidget. "
+        Text("BLoC pattern is a combination of StreamBuilder and InheritedWidget. "
             "Using StreamBuilder allows extracting all business logic into a "
             "separate 'MyBloc' class; using a InheritedWidget (usually name it "
             "as 'MyBlocProviders') allows accessing myBloc from children widgets "
@@ -178,13 +174,11 @@ class _CounterAndButton extends StatelessWidget {
               IconButton(
                 icon: Icon(Icons.add),
                 // ###7. Post new event to MyBloc by adding to bloc.inputSink.
-                onPressed: () =>
-                    bloc.inputSink.add(_MyEvent(isIncrement: true)),
+                onPressed: () => bloc.inputSink.add(_MyEvent(isIncrement: true)),
               ),
               IconButton(
                 icon: Icon(Icons.remove),
-                onPressed: () =>
-                    bloc.inputSink.add(_MyEvent(isIncrement: false)),
+                onPressed: () => bloc.inputSink.add(_MyEvent(isIncrement: false)),
               ),
             ],
           )

@@ -14,8 +14,7 @@ class MyMainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return FutureBuilder<SharedPreferences>(
       future: SharedPreferences.getInstance(),
-      builder:
-          (BuildContext context, AsyncSnapshot<SharedPreferences> snapshot) {
+      builder: (BuildContext context, AsyncSnapshot<SharedPreferences> snapshot) {
         if (!snapshot.hasData) {
           return _MySplashScreen();
         }
@@ -48,9 +47,7 @@ class _MyMainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Catalog',
-      theme: Provider.of<MyAppSettings>(context).isDarkMode
-          ? kDartTheme
-          : kLightTheme,
+      theme: Provider.of<MyAppSettings>(context).isDarkMode ? kDartTheme : kLightTheme,
       routes: kAppRoutingTable,
     );
   }

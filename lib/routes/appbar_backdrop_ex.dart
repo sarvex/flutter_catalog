@@ -12,8 +12,7 @@ class BackdropExample extends StatelessWidget {
       // Height of front layer when backlayer is shown.
       headerHeight: 120.0,
       frontLayer: Center(
-          child: Text(
-              '(front layer) \n Click top-right button to show back layer.\n\n'
+          child: Text('(front layer) \n Click top-right button to show back layer.\n\n'
               "There's no flutter official backdrop widget, this demo uses the "
               "'backdrop' package.")),
       backLayer: Center(child: Text('(back layer)')),

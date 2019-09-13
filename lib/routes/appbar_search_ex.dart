@@ -110,10 +110,7 @@ class _MySearchDelegate extends SearchDelegate<String> {
               },
               child: Text(
                 this.query,
-                style: Theme.of(context)
-                    .textTheme
-                    .display1
-                    .copyWith(fontWeight: FontWeight.bold),
+                style: Theme.of(context).textTheme.display1.copyWith(fontWeight: FontWeight.bold),
               ),
             ),
           ],
@@ -125,9 +122,7 @@ class _MySearchDelegate extends SearchDelegate<String> {
   // Suggestions list while typing (this.query).
   @override
   Widget buildSuggestions(BuildContext context) {
-    final Iterable<String> suggestions = this.query.isEmpty
-        ? _history
-        : _words.where((word) => word.startsWith(query));
+    final Iterable<String> suggestions = this.query.isEmpty ? _history : _words.where((word) => word.startsWith(query));
 
     return _SuggestionList(
       query: this.query,

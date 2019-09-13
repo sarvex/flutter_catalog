@@ -11,8 +11,7 @@ class ProviderExample extends StatelessWidget {
         // This is a stream that shows how many seconds have elapsed.
         StreamProvider<int>(
           initialData: 0,
-          builder: (BuildContext context) =>
-              Stream.periodic(Duration(milliseconds: 1000), (i) => i),
+          builder: (BuildContext context) => Stream.periodic(Duration(milliseconds: 1000), (i) => i),
         ),
         ChangeNotifierProvider<_MyCounterState>.value(
           value: _MyCounterState(),
@@ -110,8 +109,7 @@ class _CounterAndButton extends StatelessWidget {
               ),
               // Way 2 to get state up the tree: wrap a Consumer widget.
               Consumer<_MyCounterState>(
-                builder: (BuildContext context, _MyCounterState value,
-                    Widget child) {
+                builder: (BuildContext context, _MyCounterState value, Widget child) {
                   return IconButton(
                     icon: Icon(Icons.remove),
                     onPressed: () => value.decrementCounter(),

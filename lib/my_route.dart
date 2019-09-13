@@ -37,8 +37,7 @@ class MyRoute extends StatelessWidget {
         _routeName = routeName,
         super(key: key);
 
-  String get routeName =>
-      this._routeName ?? '/${this.child.runtimeType.toString()}';
+  String get routeName => this._routeName ?? '/${this.child.runtimeType.toString()}';
 
   String get title => _title ?? this.routeName;
 
@@ -46,8 +45,7 @@ class MyRoute extends StatelessWidget {
   Widget build(BuildContext context) {
     final double headerHeight = 128.0;
     final double appbarHeight = kToolbarHeight;
-    final double backLayerHeight =
-        MediaQuery.of(context).size.height - headerHeight - appbarHeight;
+    final double backLayerHeight = MediaQuery.of(context).size.height - headerHeight - appbarHeight;
     return BackdropScaffold(
       title: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
@@ -67,9 +65,7 @@ class MyRoute extends StatelessWidget {
       // height of backlayer, and wrap inside a Column. This is due to the
       // implementation of BackdropScaffold ('backdrop' package, v0.1.8).
       backLayer: Column(
-        children: <Widget>[
-          SizedBox(height: backLayerHeight, child: _getBackdropListTiles())
-        ],
+        children: <Widget>[SizedBox(height: backLayerHeight, child: _getBackdropListTiles())],
       ),
     );
   }
@@ -77,8 +73,7 @@ class MyRoute extends StatelessWidget {
   List<Widget> _getAppbarActions(BuildContext context) {
     final settings = Provider.of<MyAppSettings>(context);
     return <Widget>[
-      if (this.routeName != Navigator.defaultRouteName)
-        settings.starStatusOfRoute(this.routeName),
+      if (this.routeName != Navigator.defaultRouteName) settings.starStatusOfRoute(this.routeName),
       if (this.links?.isNotEmpty ?? false)
         PopupMenuButton(
           itemBuilder: (context) {
@@ -114,8 +109,7 @@ class MyRoute extends StatelessWidget {
         Consumer<MyAppSettings>(builder: (context, MyAppSettings settings, _) {
           return ListTile(
             onTap: () {},
-            leading: Icon(
-                settings.isDarkMode ? Icons.brightness_4 : Icons.brightness_7),
+            leading: Icon(settings.isDarkMode ? Icons.brightness_4 : Icons.brightness_7),
             title: Text('Dark mode'),
             trailing: Switch(
               onChanged: (bool value) => settings.setDarkMode(value),

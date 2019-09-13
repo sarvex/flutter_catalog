@@ -58,8 +58,7 @@ const kTableColumns = <DataColumn>[
   ),
   DataColumn(
     label: const Text('Calcium (%)'),
-    tooltip:
-        'The amount of calcium as a percentage of the recommended daily amount.',
+    tooltip: 'The amount of calcium as a percentage of the recommended daily amount.',
     numeric: true,
   ),
   DataColumn(
@@ -70,8 +69,7 @@ const kTableColumns = <DataColumn>[
 
 ////// Data class.
 class Dessert {
-  Dessert(this.name, this.calories, this.fat, this.carbs, this.protein,
-      this.sodium, this.calcium, this.iron);
+  Dessert(this.name, this.calories, this.fat, this.carbs, this.protein, this.sodium, this.calcium, this.iron);
   final String name;
   final int calories;
   final double fat;

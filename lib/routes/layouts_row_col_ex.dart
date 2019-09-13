@@ -88,8 +88,7 @@ class _RowColExampleState extends State<RowColExample> {
             items: MainAxisSize.values
                 .map((MainAxisSize val) => DropdownMenuItem(
                       value: val,
-                      child: Text(
-                          val.toString().substring('MainAxisSize.'.length)),
+                      child: Text(val.toString().substring('MainAxisSize.'.length)),
                     ))
                 .toList(),
           ),
@@ -106,9 +105,7 @@ class _RowColExampleState extends State<RowColExample> {
             items: MainAxisAlignment.values
                 .map((MainAxisAlignment val) => DropdownMenuItem(
                       value: val,
-                      child: Text(val
-                          .toString()
-                          .substring('MainAxisAlignment.'.length)),
+                      child: Text(val.toString().substring('MainAxisAlignment.'.length)),
                     ))
                 .toList(),
           ),
@@ -125,9 +122,7 @@ class _RowColExampleState extends State<RowColExample> {
             items: CrossAxisAlignment.values
                 .map((CrossAxisAlignment val) => DropdownMenuItem(
                       value: val,
-                      child: Text(val
-                          .toString()
-                          .substring('CrossAxisAlignment.'.length)),
+                      child: Text(val.toString().substring('CrossAxisAlignment.'.length)),
                     ))
                 .toList(),
           ),

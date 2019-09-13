@@ -20,8 +20,7 @@ class InheritedWidgetExample extends StatelessWidget {
 class MyInheritedWidget extends InheritedWidget {
   final _MyDemoAppState myState;
 
-  MyInheritedWidget({Key key, Widget child, @required this.myState})
-      : super(key: key, child: child);
+  MyInheritedWidget({Key key, Widget child, @required this.myState}) : super(key: key, child: child);
 
   @override
   // Returns when it's children widget should be notified for rebuild.

@@ -5,8 +5,7 @@ class AnimatedContainerExample extends StatefulWidget {
   const AnimatedContainerExample({Key key}) : super(key: key);
 
   @override
-  _AnimatedContainerExampleState createState() =>
-      _AnimatedContainerExampleState();
+  _AnimatedContainerExampleState createState() => _AnimatedContainerExampleState();
 }
 
 class _AnimatedContainerExampleState extends State<AnimatedContainerExample> {
@@ -48,8 +47,7 @@ class _AnimatedContainerExampleState extends State<AnimatedContainerExample> {
               _height = _rng.nextInt(100).toDouble() + 50;
               _borderRadius = _rng.nextInt(50).toDouble();
               // Generate a random color.
-              _color = Color.fromRGBO(
-                  _rng.nextInt(256), _rng.nextInt(256), _rng.nextInt(256), 1);
+              _color = Color.fromRGBO(_rng.nextInt(256), _rng.nextInt(256), _rng.nextInt(256), 1);
             },
           ),
         ),

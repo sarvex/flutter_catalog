@@ -5,8 +5,7 @@ class SharedPreferenceExample extends StatefulWidget {
   const SharedPreferenceExample({Key key}) : super(key: key);
 
   @override
-  _SharedPreferenceExampleState createState() =>
-      _SharedPreferenceExampleState();
+  _SharedPreferenceExampleState createState() => _SharedPreferenceExampleState();
 }
 
 class _SharedPreferenceExampleState extends State<SharedPreferenceExample> {

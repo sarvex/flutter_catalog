@@ -136,8 +136,7 @@ class _SembastExampleState extends State<SembastExample> {
         subtitle: Text('id=${todo.id}\ncreated at ${todo.createdAt}'),
         isThreeLine: true,
         leading: IconButton(
-          icon: Icon(
-              todo.isDone ? Icons.check_box : Icons.check_box_outline_blank),
+          icon: Icon(todo.isDone ? Icons.check_box : Icons.check_box_outline_blank),
           onPressed: () async {
             await _toggleTodoItem(todo);
             _updateUI();

@@ -11,8 +11,7 @@ class TextFormFieldExample extends StatefulWidget {
 // Adapted from the text form demo in official gallery app:
 // https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/material/text_form_field_demo.dart
 class _TextFormFieldExampleState extends State<TextFormFieldExample> {
-  final GlobalKey<FormFieldState<String>> _passwordFieldKey =
-      new GlobalKey<FormFieldState<String>>();
+  final GlobalKey<FormFieldState<String>> _passwordFieldKey = new GlobalKey<FormFieldState<String>>();
 
   String _name;
   String _phoneNumber;
@@ -22,8 +21,7 @@ class _TextFormFieldExampleState extends State<TextFormFieldExample> {
   String _validateName(String value) {
     if (value.isEmpty) return 'Name is required.';
     final RegExp nameExp = new RegExp(r'^[A-Za-z ]+$');
-    if (!nameExp.hasMatch(value))
-      return 'Please enter only alphabetical characters.';
+    if (!nameExp.hasMatch(value)) return 'Please enter only alphabetical characters.';
     return null;
   }
 
@@ -186,8 +184,7 @@ class _PasswordFieldState extends State<PasswordField> {
               _obscureText = !_obscureText;
             });
           },
-          child:
-              new Icon(_obscureText ? Icons.visibility : Icons.visibility_off),
+          child: new Icon(_obscureText ? Icons.visibility : Icons.visibility_off),
         ),
       ),
     );

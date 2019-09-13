@@ -3,28 +3,20 @@ import 'package:provider/provider.dart';
 
 import '../my_app_settings.dart';
 import '../my_route.dart';
-import '../my_app_routes.dart'
-    show MyRouteGroup, kAboutRoute, kMyAppRoutesStructure;
+import '../my_app_routes.dart' show MyRouteGroup, kAboutRoute, kMyAppRoutesStructure;
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    ListTile _myRouteToListTile(MyRoute myRoute,
-        {Widget leading, IconData trialing: Icons.keyboard_arrow_right}) {
-      final routeTitleTextStyle = Theme.of(context)
-          .textTheme
-          .body1
-          .copyWith(fontWeight: FontWeight.bold);
+    ListTile _myRouteToListTile(MyRoute myRoute, {Widget leading, IconData trialing: Icons.keyboard_arrow_right}) {
+      final routeTitleTextStyle = Theme.of(context).textTheme.body1.copyWith(fontWeight: FontWeight.bold);
       return ListTile(
-        leading: leading ??
-            Provider.of<MyAppSettings>(context)
-                .starStatusOfRoute(myRoute.routeName),
+        leading: leading ?? Provider.of<MyAppSettings>(context).starStatusOfRoute(myRoute.routeName),
         title: Text(myRoute.title, style: routeTitleTextStyle),
         trailing: trialing == null ? null : Icon(trialing),
-        subtitle:
-            myRoute.description == null ? null : Text(myRoute.description),
+        subtitle: myRoute.description == null ? null : Text(myRoute.description),
         onTap: () => Navigator.of(context).pushNamed(myRoute.routeName),
       );
     }
