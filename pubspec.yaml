@@ -36,7 +36,7 @@ dependencies:
   package_info: '2.0.2'
   path: '^1.6.2'
   path_provider: '2.0.14'
-  provider: '3.0.0+1'
+  provider: '3.2.0'
   scoped_model: '2.0.0'
   sembast: '2.0.1'
   sqflite: '2.2.8'
