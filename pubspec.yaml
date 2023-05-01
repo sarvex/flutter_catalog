@@ -37,7 +37,7 @@ dependencies:
   path: '^1.6.2'
   path_provider: '1.1.0'
   provider: '3.0.0+1'
-  scoped_model: '1.0.1'
+  scoped_model: '2.0.0'
   sembast: '2.0.1'
   sqflite: '2.2.8'
   shared_preferences: '2.1.0'
