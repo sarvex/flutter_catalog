@@ -41,7 +41,7 @@ dependencies:
   sembast: '2.0.1'
   sqflite: '1.1.6+3'
   shared_preferences: ' 0.5.3+1'
-  transparent_image: '1.0.0'
+  transparent_image: '2.0.1'
   url_launcher: '6.1.10'
   widget_with_codeview: '1.0.5'
 
