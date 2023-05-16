@@ -42,7 +42,7 @@ dependencies:
   sqflite: '2.2.8'
   shared_preferences: '2.1.1'
   transparent_image: '2.0.1'
-  url_launcher: '6.1.10'
+  url_launcher: '6.1.11'
   widget_with_codeview: '3.0.1'
 
   # The following adds the Cupertino Icons font to your application.
