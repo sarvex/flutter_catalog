@@ -40,7 +40,7 @@ dependencies:
   scoped_model: '2.0.0'
   sembast: '3.4.9'
   sqflite: '2.2.8'
-  shared_preferences: '2.1.2'
+  shared_preferences: '2.2.0'
   transparent_image: '2.0.1'
   url_launcher: '6.1.11'
   widget_with_codeview: '3.0.1'
