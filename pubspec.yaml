@@ -27,7 +27,7 @@ dependencies:
   firebase_storage: '11.2.3'
   flutter_bloc: '8.1.3'
   flutter_gallery_assets: '1.0.2'
-  flutter_markdown: '0.6.15'
+  flutter_markdown: '0.6.17'
   flutter_webview_plugin: '0.4.0'
   fluttertoast: '8.2.2'
   google_sign_in: '6.1.4'
