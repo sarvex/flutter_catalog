@@ -20,7 +20,7 @@ dependencies:
   backdrop: '0.9.0'
   cloud_firestore: '4.8.4'
   english_words: '4.0.0'
-  firebase_analytics: '10.4.4'
+  firebase_analytics: '10.4.5'
   firebase_auth: '4.7.2'
   firebase_database: '10.2.5'
   firebase_ml_vision: '0.12.0+3'
