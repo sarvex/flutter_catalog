@@ -10,7 +10,7 @@ description: An app showcasing Flutter components, with side-by-side source code
 version: 2.3.1+41
 
 environment:
-  sdk: ">=2.3.0 <3.0.0"
+  sdk: "<4.0.0"
 
 dependencies:
   flutter:
