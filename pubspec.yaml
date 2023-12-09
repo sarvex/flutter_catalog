@@ -18,7 +18,7 @@ dependencies:
   animated_floatactionbuttons: '0.1.0'
   async: '^2.2.0'
   backdrop: '0.9.1'
-  cloud_firestore: '4.13.3'
+  cloud_firestore: '4.13.5'
   english_words: '4.0.0'
   firebase_analytics: '10.7.2'
   firebase_auth: '4.15.2'
