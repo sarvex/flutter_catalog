@@ -21,7 +21,7 @@ dependencies:
   cloud_firestore: '4.13.5'
   english_words: '4.0.0'
   firebase_analytics: '10.7.4'
-  firebase_auth: '4.15.2'
+  firebase_auth: '4.15.3'
   firebase_database: '10.3.8'
   firebase_ml_vision: '0.12.0+3'
   firebase_storage: '11.5.6'
