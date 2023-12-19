@@ -31,7 +31,7 @@ dependencies:
   flutter_webview_plugin: '0.4.0'
   fluttertoast: '8.2.4'
   google_sign_in: '6.2.1'
-  image_picker: '1.0.4'
+  image_picker: '1.0.5'
   local_auth: '2.1.7'
   package_info: '2.0.2'
   path: '^1.6.2'
