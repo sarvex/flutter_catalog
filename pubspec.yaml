@@ -35,7 +35,7 @@ dependencies:
   local_auth: '2.1.8'
   package_info: '2.0.2'
   path: '^1.6.2'
-  path_provider: '2.1.1'
+  path_provider: '2.1.2'
   provider: '6.1.1'
   scoped_model: '2.0.0'
   sembast: '3.5.0+1'
