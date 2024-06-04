@@ -29,7 +29,7 @@ dependencies:
   flutter_gallery_assets: '1.0.2'
   flutter_markdown: '0.7.1'
   flutter_webview_plugin: '0.4.0'
-  fluttertoast: '8.2.5'
+  fluttertoast: '8.2.6'
   google_sign_in: '6.2.1'
   image_picker: '1.1.1'
   local_auth: '2.2.0'
